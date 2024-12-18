@@ -1,16 +1,21 @@
-# dish_it
+# Dish It
 
-A new Flutter project.
+Dish It is a Flutter-based application designed for food enthusiasts, chefs, and home cooks to manage profiles, explore menus, and add meals easily. The app features a clean, user-friendly interface, secure profile management, and customizable settings.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Profile Management**:  
+  Edit profile details like name, email, and password, update profile picture, and manage settings.
+- **Menu Management**:  
+  You can add new meals to your personalized menu and organize existing ones.
+- **Secure Authentication**:  
+  Includes password reset functionality and seamless login/logout options.
+- **Settings**:  
+  Change preferences such as app language or theme.
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Framework**: [Flutter](https://flutter.dev/)  
+- **Programming Language**: Dart  
+- **State Management**: Provider (or other, if applicable)  
+- **Persistent Storage**: Shared Preferences for local data caching  
