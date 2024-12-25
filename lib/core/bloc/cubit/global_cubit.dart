@@ -26,7 +26,7 @@ class GlobalCubit extends Cubit<GlobalState> {
 
   void getCachedLanguage() async {
     emit(ChangeLanguageLoadingState());
-    final cachedLanguage = await sl<CacheHelper>().getCachedLanguage();
+    final cachedLanguage = sl<CacheHelper>().getCachedLanguage();
     langCode = cachedLanguage;
     emit(ChangeLanguageSuccessState());
     isArabic = (langCode == 'ar');
