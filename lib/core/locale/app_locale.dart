@@ -16,9 +16,12 @@ class AppLocalizations {
   late Map<String, String> _localStrings;
 
   Future loadJsonFiles() async {
-    String enocedString =
+    if (locale == null) {
+      throw Exception('Locale is null. Please provide a valid locale.');
+    }
+    String encodedString =
         await rootBundle.loadString("$_path${locale!.languageCode}.json");
-    Map<String, dynamic> jsonMap = jsonDecode(enocedString);
+    Map<String, dynamic> jsonMap = jsonDecode(encodedString);
     _localStrings =
         jsonMap.map((key, value) => MapEntry(key, value.toString()));
   }
