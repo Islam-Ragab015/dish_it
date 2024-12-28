@@ -2,6 +2,7 @@ class AppStrings {
   static const String welcomeToDishit = 'welcomeToDishit';
   static const String pleaseChooseYourLanguage = 'pleaseChooseYourLanguage';
   static const String welcomeBack = 'welcomeBack';
+  static const String backToLogin = 'backToLogin';
   static const String gallery = 'gallery';
   static const String camera = 'camera';
   static const String writeHere = 'writeHere';
@@ -10,6 +11,7 @@ class AppStrings {
   static const String createAccount = 'createAccount';
   static const String email = 'email';
   static const String name = 'name';
+  static const String pleaseEnterName = 'pleaseEnterName';
   static const String phoneNumber = 'phone_number';
   static const String password = 'password';
   static const String confirmPassword = 'confirmPassword';
@@ -20,12 +22,14 @@ class AppStrings {
   static const String sendResetLink = 'sendResetLink';
   static const String sendResetLinkInfo = 'sendResetLinkInfo';
   static const String code = 'code';
+  static const String submit = 'submit';
   static const String createYourNewPassword = 'createYourNewPassword';
   static const String description = 'description';
   static const String signin = 'signin';
   static const String loginSucessfully = 'loginSucessfully';
   static const String loginFailed = 'loginFailed';
   static const String loginAccess = 'loginAccess';
+  static const String signupAccess = 'signupAccess';
   static const String pleaseEnterValidEmail = 'please_enter_email';
   static const String pleaseEnterValidPassword = 'please_enter_valid_password';
   static const String pleaseEnterValidPhone = 'please_enter_phone';
@@ -39,6 +43,7 @@ class AppStrings {
   static const String pleaseEnterValidCode = 'pleaseEnterValidCode';
   static const String passwordChangedSucessfully = 'PasswordChangedSucessfully';
   static const String pleaseEnterValidNumber = 'pleaseEnterValidNumber';
+  static const String alreadyHaveAccount = 'alreadyHaveAccount';
 
   //! home-order-menu
   static const String addDishToMenu = 'addDishToMenu';

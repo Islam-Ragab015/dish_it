@@ -1,7 +1,9 @@
 import 'package:dish_it/feature/auth/presentation/screens/change_lang_screen.dart';
+import 'package:dish_it/feature/auth/presentation/screens/forget_pass_screen.dart';
 import 'package:dish_it/feature/auth/presentation/screens/login_screen.dart';
 import 'package:dish_it/feature/auth/presentation/screens/reset_pass_screen.dart';
 import 'package:dish_it/feature/auth/presentation/screens/sent_key_screen.dart';
+import 'package:dish_it/feature/auth/presentation/screens/singup_screen.dart';
 import 'package:dish_it/feature/menu/presentation/screens/add_meal_screen.dart';
 import 'package:dish_it/feature/menu/presentation/screens/menu_home_screen.dart';
 import 'package:dish_it/feature/profile/presentation/screens/change_pass_screen.dart';
@@ -13,6 +15,7 @@ import 'package:flutter/material.dart';
 
 class Routes {
   static const login = '/login';
+  static const signup = '/signup';
   static const home = '/home';
   static const profile = '/profile';
   static const sentKey = '/sentKey';
@@ -23,6 +26,7 @@ class Routes {
   static const menu = '/menu';
   static const settings = '/settings';
   static const updateProfile = '/updateProfile';
+  static const forgetpassword = '/forgetpassword';
 }
 
 class AppRoutes {
@@ -30,6 +34,10 @@ class AppRoutes {
     switch (settings.name) {
       case Routes.login:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
+      case Routes.signup:
+        return MaterialPageRoute(builder: (_) => const SignUpScreen());
+      case Routes.forgetpassword:
+        return MaterialPageRoute(builder: (_) => const ForgotPasswordScreen());
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const ChefHomePage());
       case Routes.profile:

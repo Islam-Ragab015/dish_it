@@ -1,13 +1,13 @@
 import 'package:dish_it/core/locale/app_locale.dart';
-import 'package:dish_it/core/utils/app_strings.dart';
-import 'package:dish_it/core/widgets/custom_text_form_field.dart';
-import 'package:flutter/material.dart';
-import 'package:dish_it/core/utils/app_text_styile.dart';
 import 'package:dish_it/core/utils/app_assets.dart';
 import 'package:dish_it/core/utils/app_colors.dart';
+import 'package:dish_it/core/utils/app_strings.dart';
+import 'package:dish_it/core/utils/app_text_styile.dart';
+import 'package:dish_it/core/widgets/custom_text_form_field.dart';
+import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,10 +56,10 @@ class LoginScreen extends StatelessWidget {
                         width: 100,
                         color: AppColors.primaryColor,
                       ),
-                      const SizedBox(height: 20),
+                      // const SizedBox(height: 20),
                       // Welcome Text
                       Text(
-                        AppStrings.welcomeBack.tr(context),
+                        AppStrings.createAccount.tr(context),
                         style: boldStyle(
                           color: AppColors.primaryColor,
                           fontSize: isSmallScreen ? 28 : 32,
@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        AppStrings.loginAccess.tr(context),
+                        AppStrings.signupAccess.tr(context),
                         textAlign: TextAlign.center,
                         style: regularStyle(
                           color: AppColors.primaryColor,
@@ -78,6 +78,19 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
+
+                // Name Input Field
+                CustomTextFormField(
+                  label: AppStrings.name.tr(context),
+                  prefixIcon: Icons.person,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return AppStrings.pleaseEnterName.tr(context);
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 20),
 
                 // Email Input Field
                 CustomTextFormField(
@@ -106,7 +119,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
 
-                // Login Button
+                // Sign Up Button
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -122,7 +135,7 @@ class LoginScreen extends StatelessWidget {
                     shadowColor: AppColors.primaryColor.withAlpha(100),
                   ),
                   child: Text(
-                    AppStrings.signin.tr(context),
+                    "Sign Up",
                     style: boldStyle(
                       color: AppColors.secondaryWhiteColor,
                       fontSize: isSmallScreen ? 16 : 18,
@@ -131,15 +144,15 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
-                // Forgot Password Text
+                // Already have an account? Login Text
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/forgetpassword');
+                      Navigator.pop(context); // Go back to Login Screen
                     },
                     child: Text(
-                      AppStrings.forgetPassword.tr(context),
+                      AppStrings.alreadyHaveAccount.tr(context),
                       style: regularStyle(
                         color: AppColors.primaryColor,
                         fontSize: isSmallScreen ? 14 : 16,
@@ -152,7 +165,7 @@ class LoginScreen extends StatelessWidget {
                 _buildDividerWithText(context, isSmallScreen),
                 const SizedBox(height: 20),
 
-                // Social Media Login Buttons
+                // Social Media Signup Buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -173,22 +186,6 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
-                const SizedBox(height: 20),
-
-                // Sign Up Option for users without an account
-                TextButton(
-                  onPressed: () {
-                    // Navigate to Sign Up screen
-                    Navigator.pushNamed(context, '/signup');
-                  },
-                  child: Text(
-                    AppStrings.dontHaveAnAccount.tr(context),
-                    style: regularStyle(
-                      color: AppColors.primaryColor,
-                      fontSize: isSmallScreen ? 14 : 16,
-                    ),
-                  ),
                 ),
               ],
             ),

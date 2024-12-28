@@ -1,13 +1,13 @@
 import 'package:dish_it/core/locale/app_locale.dart';
-import 'package:dish_it/core/utils/app_strings.dart';
-import 'package:dish_it/core/widgets/custom_text_form_field.dart';
-import 'package:flutter/material.dart';
-import 'package:dish_it/core/utils/app_text_styile.dart';
 import 'package:dish_it/core/utils/app_assets.dart';
 import 'package:dish_it/core/utils/app_colors.dart';
+import 'package:dish_it/core/utils/app_strings.dart';
+import 'package:dish_it/core/utils/app_text_styile.dart';
+import 'package:dish_it/core/widgets/custom_text_form_field.dart';
+import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class ForgotPasswordScreen extends StatelessWidget {
+  const ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Welcome Section with Gradient Background
+                // Reset Password Section with Gradient Background
                 Container(
                   width: isSmallScreen ? double.infinity : size.width * 0.6,
                   decoration: BoxDecoration(
@@ -57,9 +57,9 @@ class LoginScreen extends StatelessWidget {
                         color: AppColors.primaryColor,
                       ),
                       const SizedBox(height: 20),
-                      // Welcome Text
+                      // Reset Password Text
                       Text(
-                        AppStrings.welcomeBack.tr(context),
+                        AppStrings.sendResetLink.tr(context),
                         style: boldStyle(
                           color: AppColors.primaryColor,
                           fontSize: isSmallScreen ? 28 : 32,
@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        AppStrings.loginAccess.tr(context),
+                        AppStrings.sendResetLinkInfo.tr(context),
                         textAlign: TextAlign.center,
                         style: regularStyle(
                           color: AppColors.primaryColor,
@@ -90,25 +90,13 @@ class LoginScreen extends StatelessWidget {
                     return null;
                   },
                 ),
-                const SizedBox(height: 20),
-
-                // Password Input Field
-                CustomTextFormField(
-                  label: AppStrings.password.tr(context),
-                  prefixIcon: Icons.lock,
-                  obscureText: true,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return AppStrings.pleaseEnterValidPassword.tr(context);
-                    }
-                    return null;
-                  },
-                ),
                 const SizedBox(height: 30),
 
-                // Login Button
+                // Submit Button for Password Reset
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Implement the password reset functionality
+                  },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40,
@@ -122,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                     shadowColor: AppColors.primaryColor.withAlpha(100),
                   ),
                   child: Text(
-                    AppStrings.signin.tr(context),
+                    AppStrings.submit.tr(context),
                     style: boldStyle(
                       color: AppColors.secondaryWhiteColor,
                       fontSize: isSmallScreen ? 16 : 18,
@@ -131,62 +119,19 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
-                // Forgot Password Text
+                // Back to Login Text
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/forgetpassword');
+                      Navigator.pop(context); // Go back to Login Screen
                     },
                     child: Text(
-                      AppStrings.forgetPassword.tr(context),
+                      AppStrings.backToLogin.tr(context),
                       style: regularStyle(
                         color: AppColors.primaryColor,
                         fontSize: isSmallScreen ? 14 : 16,
                       ),
-                    ),
-                  ),
-                ),
-
-                // Divider with Text
-                _buildDividerWithText(context, isSmallScreen),
-                const SizedBox(height: 20),
-
-                // Social Media Login Buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Image.asset(
-                        AppAssets.googleLogo,
-                        width: 40,
-                        height: 40,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Image.asset(
-                        AppAssets.facebookLogo,
-                        width: 40,
-                        height: 40,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-
-                // Sign Up Option for users without an account
-                TextButton(
-                  onPressed: () {
-                    // Navigate to Sign Up screen
-                    Navigator.pushNamed(context, '/signup');
-                  },
-                  child: Text(
-                    AppStrings.dontHaveAnAccount.tr(context),
-                    style: regularStyle(
-                      color: AppColors.primaryColor,
-                      fontSize: isSmallScreen ? 14 : 16,
                     ),
                   ),
                 ),
@@ -195,35 +140,6 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildDividerWithText(BuildContext context, bool isSmallScreen) {
-    return Row(
-      children: [
-        Expanded(
-          child: Divider(
-            color: AppColors.primaryColor.withAlpha(76),
-            thickness: 1,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text(
-            AppStrings.or.tr(context),
-            style: regularStyle(
-              color: AppColors.primaryColor.withAlpha(153),
-              fontSize: isSmallScreen ? 16 : 18,
-            ),
-          ),
-        ),
-        Expanded(
-          child: Divider(
-            color: AppColors.primaryColor.withAlpha(76),
-            thickness: 1,
-          ),
-        ),
-      ],
     );
   }
 }
