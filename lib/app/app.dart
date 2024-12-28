@@ -29,7 +29,7 @@ class ChefApp extends StatelessWidget {
               Locale('ar', 'EG'),
             ],
             locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
-            initialRoute: Routes.home,
+            initialRoute: Routes.login,
             theme: AppTheme.getThemeData(),
             onGenerateRoute: AppRoutes.generateAppRoutes,
             debugShowCheckedModeBanner: false,

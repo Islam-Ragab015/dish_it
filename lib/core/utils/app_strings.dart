@@ -16,13 +16,16 @@ class AppStrings {
   static const String forgetPassword = 'forgetPassword';
   static const String newPassword = 'newPassword';
   static const String oldPassword = 'oldPassword';
+  static const String forgotPassword = 'forgotPassword';
   static const String sendResetLink = 'sendResetLink';
   static const String sendResetLinkInfo = 'sendResetLinkInfo';
   static const String code = 'code';
   static const String createYourNewPassword = 'createYourNewPassword';
   static const String description = 'description';
+  static const String signin = 'signin';
   static const String loginSucessfully = 'loginSucessfully';
   static const String loginFailed = 'loginFailed';
+  static const String loginAccess = 'loginAccess';
   static const String pleaseEnterValidEmail = 'please_enter_email';
   static const String pleaseEnterValidPassword = 'please_enter_valid_password';
   static const String pleaseEnterValidPhone = 'please_enter_phone';
@@ -55,6 +58,7 @@ class AppStrings {
   static const String pleaseEnterValidMealDesc = 'pleaseEnterValidMealDesc';
   static const String pleaseEnterValidMealPrice = 'pleaseEnterValidMealPrice';
   static const String pleaseEnterValidMealPhoto = 'pleaseEnterValidMealPhoto';
+  static const String or = 'or';
 
   //!setting
   static const String editProfile = 'editProfile';
